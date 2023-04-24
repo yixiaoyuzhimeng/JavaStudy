@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TabHost
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/tabhost">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="9">
+                <TextView
+                    android:id="@+id/tv_one"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="This is one"
+                    android:textSize="20sp"/>
+                <TextView
+                    android:id="@+id/tv_two"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="This is two"
+                    android:textSize="25sp"/>
+                <TextView
+                    android:id="@+id/tv_three"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="This is three"
+                    android:textSize="30sp"/>
+                <TextView
+                    android:id="@+id/tv_four"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="This is four"
+                    android:textSize="35sp"/>
+            </FrameLayout>
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:showDividers="none"></TabWidget>
+        </LinearLayout>
+    </TabHost>
+</LinearLayout>

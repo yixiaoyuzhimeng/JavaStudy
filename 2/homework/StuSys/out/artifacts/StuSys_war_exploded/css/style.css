@@ -1,0 +1,15 @@
+.tb,td,th{
+    padding:0;
+    border:1px solid black;
+}
+.tb{
+    margin-left: 60px;
+    width:90%;
+    border-collapse:collapse;
+    boder:none;
+
+}
+
+h1{
+    margin-left:450px;
+}

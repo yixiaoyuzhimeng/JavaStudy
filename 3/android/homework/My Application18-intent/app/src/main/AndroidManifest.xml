@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.myapplication18_intent">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyApplication18intent">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".A_Activity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.sss.action.x1"></action>
+                <action android:name="com.sss.action.x2"></action>
+                <category android:name="com.sss.category.c1"></category>
+                <category android:name="com.sss.category.c2"></category>
+                <category android:name="android.intent.category.DEFAULT"></category>
+                <data android:scheme="http"></data>
+            </intent-filter>
+        </activity>
+        <activity android:name=".B_Activity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.sss.b1"/>
+                <category android:name="android.intent.category.DEFAULT"></category>
+            </intent-filter>
+        </activity>
+        <activity android:name=".C_Activity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.sss.action.x1"></action>
+                <action android:name="com.sss.action.x3"></action>
+                <category android:name="com.sss.category.c1"></category>
+                <category android:name="com.sss.category.c3"></category>
+                <category android:name="android.intent.category.DEFAULT"></category>
+                <data android:scheme="file"></data>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.sss.action.x2"></action>
+                <category android:name="com.sss.category.c2"></category>
+                <category android:name="android.intent.category.DEFAULT"></category>
+                <data android:scheme="http"></data>
+                <data android:mimeType="audio/*"></data>
+            </intent-filter>
+        </activity>
+        <activity android:name=".Share_Activity"/>
+
+    </application>
+
+</manifest>

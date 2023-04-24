@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+<!--   match_parent: 充满parent控件-->
+<!--    wrap-content:包裹内容-->
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="高度自适应，宽度充满"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLength="6"
+        android:hint="限制输入的字符数"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:hint="只显示单行"/>
+    <EditText
+        android:id="@+id/ed5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="输入数字字符"/>
+    <EditText
+        android:id="@+id/ed6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="提示信息"/>
+    <EditText
+        android:id="@+id/ed7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/home"
+        android:hint="左侧有图片"/>
+    <EditText
+        android:id="@+id/ed8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape"
+        android:hint="圆角EditText"/>
+</LinearLayout>

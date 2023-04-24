@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<!--    选择器根据view状态设置不同-->
+<!--    注意顺序：首先先判断-->
+    <item android:state_pressed="true" android:drawable="@drawable/my"/>
+    <item android:drawable="@drawable/home"/>
+</selector>
