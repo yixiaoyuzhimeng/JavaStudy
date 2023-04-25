@@ -19,6 +19,7 @@ public class RegisterServlet extends HttpServlet{
         String sex=request.getParameter("sex");
         String[]  hobbies=request.getParameterValues("hobby");
         StringBuilder hobby=new StringBuilder();
+//        将获取的字符串数组化为一个字符串
         if(hobbies!=null&&hobbies.length>0){
             for(String h:hobbies){
                 hobby.append(h+",");
@@ -34,7 +35,7 @@ public class RegisterServlet extends HttpServlet{
 //        注册结束
         response.setContentType("text/html;charset=utf-8");
         PrintWriter out=response.getWriter();
-//        成功：跳转至成功界面
+//        成功：跳转至登录界面（这里没有数据库验证是否重复，一律认为只要不为空就注册成功）
 //        失败：跳转回注册界面
         if(username1 != null && username1 != ""  && password1!=null && password1 != "" ){
 //            out.println("<script>alert('注册成功');</script>");

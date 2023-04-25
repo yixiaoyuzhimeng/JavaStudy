@@ -18,12 +18,16 @@ public class LoginPageServlet extends HttpServlet{
         String password="";
         Cookie[] cookies=req.getCookies();
         System.out.println("cookies="+cookies);
-        for(Cookie c:cookies){
-            if(c.getName().equals("username")){
-                username=c.getValue();
-            }
-            if(c.getName().equals("password")){
-                password=c.getValue();
+        if(cookies!=null){
+            for(Cookie c:cookies){
+                if(c.getName().equals("username")){
+                    username=c.getValue();
+                }
+                if(c.getName().equals("password")){
+                    password=c.getValue();
+                }
+                System.out.println("cookies.name="+username);
+                System.out.println("cookies.name="+password);
             }
         }
 
@@ -50,6 +54,4 @@ public class LoginPageServlet extends HttpServlet{
                 "</body>\n" +
                 "</html>");
     }
-
-
 }

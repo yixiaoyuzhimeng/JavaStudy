@@ -21,7 +21,7 @@ public class ModifyCandidatePageServlet extends HttpServlet {
             resp.sendRedirect("manage");
             return;
         }
-//        修改数据库
+//        修改数据库（类似于list+add）
         Candidate candidate=null;
         String driver="com.mysql.cj.jdbc.Driver";
         String url="jdbc:mysql://localhost:3306/mydb?serverTimezone=GMT";
@@ -49,11 +49,11 @@ public class ModifyCandidatePageServlet extends HttpServlet {
         PrintWriter out =resp.getWriter();
         out.println("<html><head><title>修改候选人</title>");
         out.println("</head><body>");
-        out.println("<form method='post' action='mod' enctype='multipart/form-data'>");
+        out.println("<form method='post' action='mod?url="+candidate.getPhotoUrl()+"' enctype='multipart/form-data'>");
         out.println("id：<input type='text' name='id' value='"+candidate.getId()+"' readonly><br>");
         out.println("选票：<input type='text' name='votes' value='"+candidate.getVotes()+"' readonly><br>");
         out.println("姓名：<input type='text' name='name' value='"+candidate.getName()+"' ><br>");
-//        图片的路径问题？
+//        图片的路径问题？干脆直接在上面把这个候选人图片路径作为参数传过去，如果没有修改图片就直接用！嘎嘎嘎嘎改好啦！
         out.println("照片：<img src='"+candidate.getPhotoUrl()+"'><br>");
         out.println("id：<input type='file' name='photo' value='照片'><br>");
         out.println("<input type='submit' value='提交'><br>");

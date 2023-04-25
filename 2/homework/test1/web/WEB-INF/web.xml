@@ -4,15 +4,15 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
     <context-param>
-        <param-name>cdu</param-name>
-        <param-value>成都大学</param-value>
+        <param-name>university</param-name>
+        <param-value>cdu</param-value>
     </context-param>
     <servlet>
         <servlet-name>ParamServlet</servlet-name>
         <servlet-class>cdu.yxy.app.ParamServlet</servlet-class>
         <init-param>
             <param-name>major</param-name>
-            <param-value>软件工程</param-value>
+            <param-value>softwareengineering</param-value>
         </init-param>
     </servlet>
     <servlet-mapping>

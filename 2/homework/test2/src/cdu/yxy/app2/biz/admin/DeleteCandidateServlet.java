@@ -34,6 +34,7 @@ public class DeleteCandidateServlet extends HttpServlet {
             int rows=stmt.executeUpdate(sql);
             if(rows==1){
                 System.out.println("删除成功"+id);
+//                这里也是只需要改变最后一个
                 out.println("<script>alert('候选人" +id +"号已删除');window.location.href='manage'</script>");
             }else{
                 System.out.println("删除失败"+sql);

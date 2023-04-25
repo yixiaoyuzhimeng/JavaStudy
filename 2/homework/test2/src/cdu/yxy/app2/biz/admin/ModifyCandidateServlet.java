@@ -23,7 +23,16 @@ import java.util.List;
 public class ModifyCandidateServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String url1=req.getParameter("url");
+        if(url1==null || "".equals(url1)){
+            resp.sendRedirect("modPre");
+            return;
+        }
         Candidate candidate=null;
+        //    路径问题:如果我不修改，怎么做它才不会改变呢？？？ 怎么才能确定一张图片根本没有修改呢？
+        //        创建和更改图片都是通过获取图片的名称
+
+
         //        配置保存位置
         String path="/photo";
         //        获取保存位置对应的真实物理地址
@@ -48,6 +57,7 @@ public class ModifyCandidateServlet extends HttpServlet {
                     if(item.getFieldName().equals("id")){
                         candidate.setId(Integer.parseInt(item.getString()));
                     }
+//                    按理说管理员也不应该有这么大的权限修改数据
                     if(item.getFieldName().equals("votes")){
                         candidate.setVotes(Integer.parseInt(item.getString()));
                     }
@@ -56,10 +66,18 @@ public class ModifyCandidateServlet extends HttpServlet {
                     }
                 }else{
                     String fileName=item.getName();
-                    fileName=System.currentTimeMillis()+fileName;
-                    File file=new File(savedDir+File.separator+fileName);
-                    item.write(file);
-                    candidate.setPhotoUrl(req.getContextPath()+path+"/"+fileName);
+                    System.out.println("获取更改的图片名称"+fileName);
+                    System.out.println("获取更改的图片名称类型"+(fileName==""));
+                    System.out.println(url1);
+                    if(fileName!=""){
+                        fileName=System.currentTimeMillis()+fileName;
+                        File file=new File(savedDir+File.separator+fileName);
+                        item.write(file);
+                        candidate.setPhotoUrl(req.getContextPath()+path+"/"+fileName);
+                    }else{
+                        candidate.setPhotoUrl(url1);
+                    }
+
                 }
             }
             System.out.println("修改成功"+candidate);

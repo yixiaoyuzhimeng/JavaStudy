@@ -37,7 +37,7 @@ public class ValidCodeServlet extends HttpServlet{
             stringBuilder.append(codes.charAt(random.nextInt(codes.length())));
         }
         validCode=stringBuilder.toString();
-        System.out.println("生成的验证码是;"+validCode);
+        System.out.println("生成的验证码是:"+validCode);
 
 //        保存验证码,在会话范围内保存
         HttpSession session=req.getSession();

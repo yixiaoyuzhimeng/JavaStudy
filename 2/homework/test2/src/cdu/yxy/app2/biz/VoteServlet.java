@@ -13,7 +13,7 @@ import java.sql.PreparedStatement;
 public class VoteServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        获取id
+//        获取id，从请求中获得参数
         String id=req.getParameter("id");
         if(id==null||"".equals(id)){
             resp.sendRedirect("admin/manage");
@@ -35,6 +35,7 @@ public class VoteServlet extends HttpServlet {
             int rows =pstmt.executeUpdate();
             if(rows==1){
                 System.out.println("投票成功"+id);
+//              跳转路径  window.location.href='list'
                 out.println("<script>alert('您投给"+id+"号一票');window.location.href='list'</script>");
             }
             else{

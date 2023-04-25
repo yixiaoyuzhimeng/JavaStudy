@@ -53,6 +53,7 @@ public class AddCandidateServlet extends HttpServlet {
                 }else {
 //                      获取上传文件文件名
                     String fileName = item.getName();
+//                    获取当前时间
                     fileName=System.currentTimeMillis()+fileName;
 //                    //利用UUID生成伪随机字符串，作为文件名避免重复
 //                    String uuid= UUID.randomUUID().toString();
@@ -88,7 +89,7 @@ public class AddCandidateServlet extends HttpServlet {
                 int rows = pstmt.executeUpdate();
                 if (rows == 1) {
                     System.out.println("添加成功" + candidate);
-//                     路径问题 manage ? admin/manage ?/manage? 应该选第一个
+//                     路径问题 manage ? admin/manage ? /manage?      应该选第一个manage!!!!这个也是只需要改变最后一个
                     out.println("<script>alert('候选人" + candidate.getName() +"添加成功');window.location.href='manage'</script>");
                 } else {
                     System.out.println("添加失败" + candidate + "," + sql);

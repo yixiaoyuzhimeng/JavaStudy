@@ -15,7 +15,7 @@ public class AddCandidatePageServlet extends HttpServlet {
         PrintWriter out =resp.getWriter();
         out.println("<html><head><title>增加候选人</title>");
         out.println("</head><body>");
-//        路径问题 admin/add ？ add  后者
+//        路径问题 admin/add ？ add!后者!!!!!!why?想知道这个逻辑……
         out.println("<form method='post' action='add' enctype='multipart/form-data'>");
         out.println("候选人姓名<input type='text' name='name'><br>");
         out.println("候选人照片<input type='file' name='photo'><br>");

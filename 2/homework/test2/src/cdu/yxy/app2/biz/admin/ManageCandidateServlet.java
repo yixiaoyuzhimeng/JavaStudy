@@ -30,7 +30,7 @@ public class ManageCandidateServlet extends HttpServlet {
             Connection conn = DriverManager.getConnection(url,db_user,db_pwd);
             Statement stmt=conn.createStatement();
             String sql="select * from table_candidate order by votes";
-            ResultSet rs=stmt.executeQuery(sql);
+            ResultSet rs = stmt.executeQuery(sql);
             while(rs.next()){
                 Candidate candidate=new Candidate();
                 candidate.setId(rs.getInt("id"));
@@ -65,7 +65,6 @@ public class ManageCandidateServlet extends HttpServlet {
             out.println("<td>"+candidateList.get(i).getId()+"</td>");
             out.println("<td>"+candidateList.get(i).getName()+"</td>");
             out.println("<td>"+candidateList.get(i).getVotes()+"</td>");
-//            图片的路径问题？
             out.println("<td><img src='"+candidateList.get(i).getPhotoUrl()+"'width='60' height='90'</td>");
             out.println("<td><a href='modPre?id="+candidateList.get(i).getId()+"'>修改</a></td>");
             out.println("<td><a href='del?id="+candidateList.get(i).getId()+"'>删除</a></td>");

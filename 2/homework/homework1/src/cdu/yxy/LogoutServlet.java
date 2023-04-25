@@ -12,7 +12,7 @@ import java.io.IOException;
 public class LogoutServlet extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        会话失效
+//        令会话失效
         HttpSession session = request.getSession();
         session.invalidate();
 //        页面跳转回去

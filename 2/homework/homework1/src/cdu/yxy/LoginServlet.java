@@ -16,8 +16,8 @@ public class LoginServlet extends HttpServlet {
         String inputCode=request.getParameter("inputCode");
         String saveUser=request.getParameter("saveUser");
 
-////        保存或删除cookie
-////        判断saveUser==on
+////        保存或删除cookie（但这里不太合逻辑，因为一般登陆上之后保存更可靠，不然你会保存一个没用的账号密码）
+////        判断saveUser==on(checkbox的选项就是on或者null)
         Cookie cUsername=new Cookie("username",username);
         Cookie cPassword=new Cookie("password",password);
         if(saveUser!=null && saveUser.equals("on")){ //saveUser.equals("on")?
@@ -45,12 +45,14 @@ public class LoginServlet extends HttpServlet {
             return;
         }
 
-//        验证用户名和密码
+//        验证用户名和密码(因为这里没有数据库连接，就将用户名和密码相同作为验证方式)
         if(username.equals(password)){
-//                保存用户名
+//                Session中保存用户名
             session.setAttribute("username",username);
             response.sendRedirect("success");
         }else{
+//            sendRedirect是重定向
+
             response.sendRedirect("loginPage");
         }
     }

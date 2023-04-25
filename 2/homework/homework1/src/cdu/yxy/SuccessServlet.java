@@ -17,7 +17,7 @@ public class SuccessServlet extends HttpServlet {
 //        相应界面
         response.setContentType("text/html;charset=utf-8");
         PrintWriter out=response.getWriter();
-//          获取已登陆用户信息
+//          获取已登陆用户信息，session中保存的数据
         HttpSession session=request.getSession();
         String username=(String)session.getAttribute("username");
 

@@ -65,6 +65,7 @@ public class CandidateListServlet extends HttpServlet {
             out.println("<td>"+candidateList.get(i).getVotes()+"</td>");
             out.println("<td><img src='"+candidateList.get(i).getPhotoUrl()+"'width='60' height='90'></td>");
 //            注意符号要用英文的，引号不容易区分
+//            跳转路径，使用超链接，附带参数
             out.println("<td><a href='vote?id="+candidateList.get(i).getId()+"'>投票</td>");
             out.println("</tr>");
         }
